@@ -4,8 +4,9 @@ import indexRoutas from './router/index.routes.js'
 
 const app = express()
 const port = 3000
+app.use(express.json())
 
-app.use(empleadosRoutas)
+app.use('/api', empleadosRoutas)
 
 app.use(indexRoutas)
 
