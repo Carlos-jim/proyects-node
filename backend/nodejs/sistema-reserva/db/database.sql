@@ -1,7 +1,9 @@
 CREATE DATABASE  IF NOT EXISTS restaurant;
 
+USE restaurant;
+
 -- Tabla de usuarios
-CREATE TABLE Usuarios (
+CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
