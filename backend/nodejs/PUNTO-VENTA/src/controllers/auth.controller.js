@@ -1,5 +1,7 @@
-import { createUser } from "../models/register.model.js";
+import { createUser } from "../models/auth.model.js";
+import { findbyUser } from "../models/auth.model.js";
 import { validationResult } from "express-validator";
+import jwt from "jsonwebtoken"
 
 
 //Registro
@@ -18,4 +20,11 @@ export const register = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: "Error"});
     }
+}
+
+
+//login
+
+export const login  = async(req, res) => {
+    
 }
