@@ -13,7 +13,7 @@ router.post('/register', [
 
 router.post('/login', [
     check('email', 'El correo de usuario es obligatorio y debe ser un correo válido').isEmail(),
-    check('contraseña', 'La contraseña de usuario es obligatoria')
+    check('contraseña', 'La contraseña de usuario es obligatoria').not().isEmpty()
 ], login)
 
 export default router;
