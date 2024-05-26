@@ -10,7 +10,7 @@ export const createUser = async (user) => {
 }
 
 //Login
-export const findbyUser = async(email) => {
+export const findbyUserEmail = async(email) => {
     const [rows] = await pool.query('SELECT * FROM usuarios WHERE email = ?', [email]);
     return rows[0];
 }
