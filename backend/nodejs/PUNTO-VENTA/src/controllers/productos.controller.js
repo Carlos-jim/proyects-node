@@ -1,6 +1,8 @@
 import { validationResult } from "express-validator";
-import {createCategoria} from "../models/productos.model.js"
+import {createCategoria, createProducto} from "../models/productos.model.js"
 
+
+//Controlador crear categoria del producto
 export const crearCategoria = async(req,res) => {
     const errors = validationResult(req)
 
@@ -17,3 +19,24 @@ export const crearCategoria = async(req,res) => {
         res.status(500).json({message: 'Error'})
     }
 }
+
+
+//Crear producto 
+export const crearProducto = async(req, res) => {
+    const errors = validationResult(req)
+    
+    if(!errors.isEmpty()){
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+        const {nombre, descripcion, precio, stock, i_categoria} = req.body
+
+        const result = await createCategoria({nombre, descripcion, precio, stock, i_categoria})
+        res.status(201).json({message: 'Producto creado exitosamente', productoId: result.insertnombre})
+    
+    } catch (error) {
+        res.status(500).json({message: 'Error'})
+    }
+} 
+
