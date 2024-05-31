@@ -32,7 +32,7 @@ export const crearProducto = async(req, res) => {
     try {
         const {nombre, descripcion, precio, stock, i_categoria} = req.body
 
-        const result = await createCategoria({nombre, descripcion, precio, stock, i_categoria})
+        const result = await createProducto({nombre, descripcion, precio, stock, i_categoria})
         res.status(201).json({message: 'Producto creado exitosamente', productoId: result.insertnombre})
     
     } catch (error) {
