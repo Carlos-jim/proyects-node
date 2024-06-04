@@ -30,10 +30,10 @@ export const crearProducto = async(req, res) => {
     }
 
     try {
-        const {nombre, descripcion, precio, stock, i_categoria} = req.body
+        const {nombre, descripcion, precio, stock, id_categoria} = req.body
 
-        const result = await createProducto({nombre, descripcion, precio, stock, i_categoria})
-        res.status(201).json({message: 'Producto creado exitosamente', productoId: result.insertnombre})
+        const result = await createProducto({nombre, descripcion, precio, stock, id_categoria})
+        res.status(201).json({message: 'Producto creado exitosamente'})
     
     } catch (error) {
         res.status(500).json({message: 'Error'})
