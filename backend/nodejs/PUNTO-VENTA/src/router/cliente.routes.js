@@ -1,9 +1,10 @@
-import { registerCliente } from '../controllers/cliente.controller.js';
+import { registerCliente, getClientes, getIdCliente } from '../controllers/cliente.controller.js';
 import { Router } from 'express';
 import { check } from 'express-validator';
 
 const router = Router()
 
+//Crear clientes
 router.post('/register-cliente', [
     check('nombre', 'El nombre de usuario es obligatorio').not().isEmpty(),
     check('email', 'El correo de usuario es obligatorio y debe ser un correo válido').isEmail(),
@@ -11,5 +12,9 @@ router.post('/register-cliente', [
     check('direccion', 'El numero de telefono del cleinte es oblifgatorio').not().isEmpty()
 
 ], registerCliente)
+
+router.get('/obtener-clientes', getClientes)
+
+router.get('/obtener-cliente/:id', getIdCliente)
 
 export default router;
