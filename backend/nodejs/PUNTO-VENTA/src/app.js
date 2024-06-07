@@ -5,6 +5,7 @@ import clienteRoutes from './router/cliente.routes.js'
 import productoRoutes from './router/productos.routes.js'
 import inventarioRoutes from './router/inventario.routes.js'
 import ventaRoutes from './router/venta.routes.js'
+import categoriasRouter from './router/categorias.routes.js'
 const app = express()
 
 app.use(express.json())
@@ -17,6 +18,8 @@ app.use('/api', clienteRoutes)
 app.use('/api',  productoRoutes)
 app.use('/api', inventarioRoutes)
 app.use('/api', ventaRoutes)
+app.use('/api', categoriasRouter)
+
 
 app.use((req, res, next) => {
     res.status(404).json({ message: "Not found" });

@@ -1,12 +1,8 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import { crearCategoria, crearProducto } from '../controllers/productos.controller.js';
+import {  crearProducto } from '../controllers/productos.controller.js';
 
 const router = Router()
-
-router.post('/crear-categoria', [
-    check('nombre', 'El nombre de usuario es obligatorio').not().isEmpty(),
-], crearCategoria)
 
 router.post('/crear-producto', [
     check('nombre', 'El nombre del producto es obligatorio').not().isEmpty(),
