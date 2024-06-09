@@ -37,7 +37,7 @@ export const getUnaCategoria = async(req, res) => {
         }
         res.json(UnaCategoria)
     } catch (error) {
-        onsole.error('Error al obtener la categoria registrada:', error);
+        console.error('Error al obtener la categoria registrada:', error);
         res.status(500).json({ error: "Error al obtener al obtener la categoria" });
     }
 }
@@ -64,14 +64,14 @@ export const editCategoria = async (req, res) => {
     }
 }
 
-export const removeCategoria = async (eq, res) => {
+export const removeCategoria = async (req, res) => {
     try {
         const  result = await deleteCategoria(req.params.id)
 
         if (result.affectedRows === 0) {
             return res.status(404).json({ error: 'Categoria no encontrada' });
         }
-        res.json({ message: 'Cliente actualizado exitosamente' });
+        res.json({ message: 'Categoria eliminada exitosamente' });
     } catch (error) {
         console.error('Error al eliminar la categoria:', error);
         res.status(500).json({ error: "Error al eliminar la categoria" });
