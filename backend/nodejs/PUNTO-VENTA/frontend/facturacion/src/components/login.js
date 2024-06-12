@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from 'react';
 
 const Login = () => {
@@ -21,13 +19,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // Aquí  la lógica para manejar el envío del formulario
+    // Aquí puedes agregar la lógica para manejar el envío del formulario
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Iniciar Sesion</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Login</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-gray-700">Nombre</label>
@@ -37,7 +35,7 @@ const Login = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 text-gray-700"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
               required
             />
           </div>
@@ -49,30 +47,30 @@ const Login = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 text-gray-700"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
               required
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-gray-700 text-gray-700">Contraseña</label>
+            <label htmlFor="password" className="block text-gray-700">Contraseña</label>
             <input
               type="password"
               id="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 text-gray-700"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
               required
             />
           </div>
           <div>
-            <label htmlFor="role" className="block text-gray-700 text-gray-700">Rol</label>
+            <label htmlFor="role" className="block text-gray-700">Rol</label>
             <select
               id="role"
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 text-gray-700"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
             >
               <option value="admin">Admin</option>
               <option value="cajero">Cajero</option>
