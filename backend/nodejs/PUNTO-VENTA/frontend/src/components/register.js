@@ -19,13 +19,13 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // Aquí  la lógica para manejar el envío del formulario
+    // Implement form submission logic here
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Login</h2>
+        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Registrar Usuario</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-gray-700">Nombre</label>
@@ -35,7 +35,7 @@ const Register = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required
             />
           </div>
@@ -47,7 +47,7 @@ const Register = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required
             />
           </div>
@@ -59,7 +59,7 @@ const Register = () => {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required
             />
           </div>
@@ -70,14 +70,17 @@ const Register = () => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200"
+              className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
             >
               <option value="admin">Admin</option>
               <option value="cajero">Cajero</option>
             </select>
           </div>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">
-            Iniciar Sesión
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"
+          >
+            Registrar Usuario
           </button>
         </form>
       </div>
