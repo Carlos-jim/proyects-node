@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Login = () => {
+const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // Aquí puedes agregar la lógica para manejar el envío del formulario
+    // Aquí  la lógica para manejar el envío del formulario
   };
 
   return (
@@ -85,4 +85,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
