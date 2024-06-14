@@ -17,13 +17,13 @@ export const getVentaById = async(id) => {
     return rows[0]
 }
 
-export const updateVenta = async(id, inventario) => {
+export const updateInventario = async(id, inventario) => {
     const {id_producto, cantidad, tipo_movimiento, descripcion} = inventario
     const [result] = await pool.query('UPDATE ventas SET id_producto = ?, cantidad = ?, tipo_movimiento = ?, descripcion = ?  WHERE id_inventario = ?', [id_producto, cantidad, tipo_movimiento, descripcion, id])
     return result
 }
 
-export const deleteVenta = async(id) =>{
+export const deleteInventario = async(id) =>{
     const [result] = await pool.query('DELETE * FROM inventario WHERE id_inventario = ?', [id])
     return result
 }

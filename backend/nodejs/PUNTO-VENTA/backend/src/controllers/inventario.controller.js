@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { createInventario, deleteVenta, getAllInventarios, getVentaById, updateVenta } from "../models/inventario.model.js";
+import { createInventario, deleteInventario, getAllInventarios, getVentaById, updateVenta } from "../models/inventario.model.js";
 
 
 export const crearInventario = async(req, res)=> {
@@ -20,7 +20,7 @@ export const crearInventario = async(req, res)=> {
     }
 }
 
-export const getVentas = async(req, res) => {
+export const getInventarios = async(req, res) => {
     try {
         const inventarios = await getAllInventarios()
         res.json(inventarios)
@@ -52,7 +52,7 @@ export const editInventario = async(req,res) =>{
     }
 
     try {
-        const result = await updateVenta(req.params.id, req.body)
+        const result = await updateInventario(req.params.id, req.body)
 
         if (result.affectedRows=== 0) {
             return res.status(404).json({ error: 'Venta no econtrada' });
@@ -69,10 +69,10 @@ export const editInventario = async(req,res) =>{
 
 export const removeInventario = async(req,res) =>{
     try {
-        const result = await deleteVenta(req.params.id)
+        const result = await deleteInventario(req.params.id)
 
         if (result.affectedRows === 0) {
-            return res.status(404).json({ error: 'Venta no encontrada' });
+            return res.status(404).json({ error: 'Inventario no encontrada' });
         }
 
         res.json({ message: 'Inventario eliminado exitosamente' });
