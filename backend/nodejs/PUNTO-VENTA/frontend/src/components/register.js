@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import api from '../api/api.js';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,8 @@ const Register = () => {
     password: '',
     role: 'admin',
   });
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,10 +19,15 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Implement form submission logic here
+    try {
+      const response = await api.post('/register', formData);
+      setSuccess('Usuario registrado con éxito');
+      console.log('User registered:', response.data);
+    } catch (err) {
+      setError(err.response ? err.response.data.message : 'Error de servidor');
+    }
   };
 
   return (
@@ -76,6 +84,8 @@ const Register = () => {
               <option value="cajero">Cajero</option>
             </select>
           </div>
+          {error && <p className="text-red-500">{error}</p>}
+          {success && <p className="text-green-500">{success}</p>}
           <button
             type="submit"
             className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out"

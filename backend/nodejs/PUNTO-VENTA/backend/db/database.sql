@@ -33,7 +33,7 @@ CREATE TABLE productos (
 
 -- Tabla de clientes
 CREATE TABLE clientes (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    cedula INT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     telefono VARCHAR(15),
@@ -45,11 +45,11 @@ CREATE TABLE clientes (
 CREATE TABLE ventas (
     id_venta INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT,
-    id_cliente INT,
+    cedula INT,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     total DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+    FOREIGN KEY (cedula) REFERENCES clientes(cedula)
 );
 
 
