@@ -3,9 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [clientsSubmenuOpen, setClientsSubmenuOpen] = useState(false);
+  const [productsSubmenuOpen, setProductsSubmenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleClientsSubmenu = () => {
+    setClientsSubmenuOpen(!clientsSubmenuOpen);
+  };
+
+  const toggleProductsSubmenu = () => {
+    setProductsSubmenuOpen(!productsSubmenuOpen);
   };
 
   return (
@@ -30,13 +40,50 @@ const Sidebar = () => {
           >
             Facturar
           </Link>
-          <Link
-            to="/clients"
-            className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+          <button
+            onClick={toggleClientsSubmenu}
+            className="w-full text-left py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
           >
-            Ventas
-          </Link>
-
+            Clientes
+          </button>
+          {clientsSubmenuOpen && (
+            <div className="ml-4">
+              <Link
+                to="/lista-clientes"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Lista de Clientes
+              </Link>
+              <Link
+                to="/añadir-clientes"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Añadir Cliente
+              </Link>
+            </div>
+          )}
+          <button
+            onClick={toggleProductsSubmenu}
+            className="w-full text-left py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+          >
+            Productos
+          </button>
+          {productsSubmenuOpen && (
+            <div className="ml-4">
+              <Link
+                to="/products"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Lista de Productos
+              </Link>
+              <Link
+                to="/add-product"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Añadir Producto
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
 
@@ -52,12 +99,50 @@ const Sidebar = () => {
           >
             Facturar
           </Link>
-          <Link
-            to="/clients"
-            className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+          <button
+            onClick={toggleClientsSubmenu}
+            className="w-full text-left py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
           >
-            Ventas
-          </Link>
+            Clientes
+          </button>
+          {clientsSubmenuOpen && (
+            <div className="ml-4">
+              <Link
+                to="/lista-clientes"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Lista de Clientes
+              </Link>
+              <Link
+                to="/añadir-cliente"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Añadir Cliente
+              </Link>
+            </div>
+          )}
+          <button
+            onClick={toggleProductsSubmenu}
+            className="w-full text-left py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+          >
+            Productos
+          </button>
+          {productsSubmenuOpen && (
+            <div className="ml-4">
+              <Link
+                to="/products"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Lista de Productos
+              </Link>
+              <Link
+                to="/add-product"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
+              >
+                Añadir Producto
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
     </div>
