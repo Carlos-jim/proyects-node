@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { createInventario, deleteInventario, getAllInventarios, getVentaById, updateVenta } from "../models/inventario.model.js";
+import { createInventario, deleteInventario, getAllInventarios, getInventarioById, updateInventario } from "../models/inventario.model.js";
 
 
 export const crearInventario = async(req, res)=> {
@@ -32,7 +32,7 @@ export const getInventarios = async(req, res) => {
 
 export const getUnInventario = async(req, res) => {
     try {
-        const inventario = await getVentaById(req.params.id)
+        const inventario = await getInventarioById(req.params.id)
 
         if (!inventario) {
             return res.status(404).json({ error: 'Inventario no encontrado' });

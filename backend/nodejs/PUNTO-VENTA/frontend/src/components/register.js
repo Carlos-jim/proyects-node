@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import api from '../api/api.js';
+import api from '../api/api.js'; // Asegúrate de importar la configuración de Axios
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    nombre: '',
     email: '',
-    password: '',
-    role: 'admin',
+    contrasena: '',
+    rol: 'admin',
   });
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
@@ -36,12 +36,12 @@ const Register = () => {
         <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Registrar Usuario</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-gray-700">Nombre</label>
+            <label htmlFor="nombre" className="block text-gray-700">Nombre</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="nombre"
+              name="nombre"
+              value={formData.nombre}
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required
@@ -60,23 +60,23 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-gray-700">Contraseña</label>
+            <label htmlFor="contrasena" className="block text-gray-700">Contraseña</label>
             <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
+              type="contrasena"
+              id="contrasena"
+              name="contrasena"
+              value={formData.contrasena}
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required
             />
           </div>
           <div>
-            <label htmlFor="role" className="block text-gray-700">Rol</label>
+            <label htmlFor="rol" className="block text-gray-700">Rol</label>
             <select
-              id="role"
-              name="role"
-              value={formData.role}
+              id="rol"
+              name="rol"
+              value={formData.rol}
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
             >

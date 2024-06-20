@@ -12,7 +12,7 @@ export const getAllInventarios = async() => {
     return rows
 }
 
-export const getVentaById = async(id) => {
+export const getInventarioById = async(id) => {
     const [rows] = await pool.query('SELECT * FROM inventario WHERE id_inventario = ?', [id])
     return rows[0]
 }
