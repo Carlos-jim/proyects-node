@@ -6,6 +6,7 @@ const AddProduct = () => {
   const [formData, setFormData] = useState({
     nombre: '',
     precio: '',
+    stock:'',
     descripcion: '',
     id_categoria: '' // Añade el campo para la categoría
   });
@@ -47,6 +48,7 @@ const AddProduct = () => {
         setFormData({
           nombre: '',
           precio: '',
+          stock:'',
           descripcion: '',
           id_categoria: '' 
         });
@@ -89,6 +91,18 @@ const AddProduct = () => {
                   id="precio"
                   name="precio"
                   value={formData.precio}
+                  onChange={handleChange}
+                  className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="stock" className="block text-gray-700">Stock</label>
+                <input
+                  type="number"
+                  id="stock"
+                  name="stock"
+                  value={formData.stock}
                   onChange={handleChange}
                   className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
                   required
