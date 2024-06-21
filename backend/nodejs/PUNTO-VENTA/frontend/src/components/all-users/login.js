@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Login = () => {
     const [formData, setFormData] = useState({
       email: '',
-      password: '',
+      contrasena: '',
     });
     const handleChange = (e) => {
       const { name, value } = e.target;
@@ -38,12 +38,12 @@ return (
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-gray-700">Contraseña</label>
+            <label htmlFor="contrasena" className="block text-gray-700">Contraseña</label>
             <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
+              type="contrasena"
+              id="contrasena"
+              name="contrasena"
+              value={formData.contrasena}
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md focus:ring focus:ring-blue-200 transition duration-300 ease-in-out hover:border-blue-500"
               required

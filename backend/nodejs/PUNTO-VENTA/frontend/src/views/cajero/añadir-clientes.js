@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import Sidebar from '../../components/sidebar-cajero';
+import api from '../../api/api';
+import Sidebar from '../../components/cajero/sidebar-cajero';
 
 const AddClient = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ const AddClient = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/clients', formData);
+      const response = await api.post('/register-cliente', formData);
 
       if (response.status === 201) {
         setSuccess('Cliente añadido con éxito!');
