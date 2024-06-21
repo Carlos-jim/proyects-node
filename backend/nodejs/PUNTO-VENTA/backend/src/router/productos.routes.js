@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { check } from 'express-validator';
-import {  crearProducto,removeProducto, getProductos, getUnProducto, editProducto } from '../controllers/productos.controller.js';
+import { crearProducto, removeProducto, getProductos, getUnProducto, editProducto } from '../controllers/productos.controller.js';
 
-const router = Router()
+const router = Router();
 
 router.post('/crear-producto', [
     check('nombre', 'El nombre del producto es obligatorio').not().isEmpty(),
@@ -15,8 +15,5 @@ router.get('/obtener-producto/:id', getUnProducto)
 
 router.put('/editar-producto/:id', editProducto)
 router.delete('eliminar-producto/:id', removeProducto)
-
-
-
 
 export default router

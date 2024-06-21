@@ -24,7 +24,7 @@ export const crearProducto = async(req, res) => {
 //Obtener todos los productos
 export const getProductos = async(req, res) => {
     try {
-        const productos = await getAllProductos
+        const productos = await getAllProductos()
         res.json(productos)
     } catch (error) {
         console.error('Error al obtener los productos registrados:', error);

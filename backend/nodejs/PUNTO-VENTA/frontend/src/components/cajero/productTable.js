@@ -5,7 +5,7 @@ import api from '../../api/api';
 import Sidebar from './sidebar-cajero';
 
 const fetchProduct = async() => {
-    const response = await api.post('http://localhost:3000/api/obtener-productos')
+    const response = await api.get('http://localhost:3000/api/obtener-productos')
     return response.data
 }
 
@@ -28,6 +28,10 @@ const ProductTable = () => {
           Header: 'Stock',
           accessor: 'stock',
         },
+        {
+          Header: 'Categoria',
+          accessor: 'categoria'
+        }
       ],
       []
     );
