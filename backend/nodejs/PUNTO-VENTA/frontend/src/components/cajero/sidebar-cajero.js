@@ -71,13 +71,13 @@ const Sidebar = () => {
           {productsSubmenuOpen && (
             <div className="ml-4">
               <Link
-                to="/products"
+                to="/lista-productos"
                 className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
               >
                 Lista de Productos
               </Link>
               <Link
-                to="/add-product"
+                to="/añadir-productos"
                 className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
               >
                 Añadir Producto
@@ -130,13 +130,13 @@ const Sidebar = () => {
           {productsSubmenuOpen && (
             <div className="ml-4">
               <Link
-                to="/products"
+                to="/lista-productos"
                 className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
               >
                 Lista de Productos
               </Link>
               <Link
-                to="/add-product"
+                to="/añadir-productos"
                 className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white"
               >
                 Añadir Producto
